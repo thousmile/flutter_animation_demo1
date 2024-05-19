@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animation_demo1/animated_builder.dart';
 import 'package:flutter_animation_demo1/animated_opacity_widget.dart';
+import 'package:flutter_animation_demo1/animation_route.dart';
 
 import 'animated_container.dart';
 import 'animated_opacity.dart';
 import 'animated_widget.dart';
 import 'animation1.dart';
 import 'animation_hero.dart';
+import 'animation_hero2.dart';
 
 void main() {
   runApp(const MyApp());
@@ -40,6 +42,10 @@ class MyApp extends StatelessWidget {
             const AnimatedOpacityPage(title: 'Flutter AnimatedOpacity Demo'),
         "/animated/hero": (c) =>
             const AnimationHeroPage(title: 'Flutter AnimatedHero Demo'),
+        "/animated/hero2": (c) =>
+            const AnimationHero2Page(title: 'Flutter AnimatedHero2 Demo'),
+        "/animated/route": (c) =>
+            const AnimationRoutePage(title: 'Flutter AnimatedRoute Demo'),
       },
       initialRoute: "/",
     );
@@ -91,6 +97,18 @@ class MyHomePage extends StatelessWidget {
                   onPressed: () =>
                       Navigator.of(context).pushNamed("/animated/hero"),
                   child: const Text("AnimatedHero"),
+                ),
+                const SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () =>
+                      Navigator.of(context).pushNamed("/animated/hero2"),
+                  child: const Text("AnimatedHero2"),
+                ),
+                const SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () =>
+                      Navigator.of(context).pushNamed("/animated/route"),
+                  child: const Text("AnimatedRoute"),
                 ),
               ],
             ),
